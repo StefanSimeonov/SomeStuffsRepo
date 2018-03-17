@@ -1,0 +1,714 @@
+<html>
+	<head>
+	 <title>Shutter calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	 <div class="container">
+		<div class='well'>
+			<h2 class="col-sm-12">Оразмеряване на кофражни системи</h2>
+			<h4 style="color:red" class="col-sm-12">Моля въвеждайте всички размери в сантиметри и Mpa (N/mm^2)</h4>
+			<div class="form-group">
+				<div class="form-group col-sm-12">
+					<label for='concreteThickness'class="col-sm-12">Въведете дебелината на бетоновата плоча</label>
+					<div class="col-sm-3">
+						<input id='concreteThickness'type='text'class="form-control">
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group col-sm-12">
+			<p>Оразмеряване на кофражни платна<p>
+			<label class="firstLabel"><input type="radio" name="radio1" class="firstButton">Използвай  Finnishing combi plywood платна</label>
+			</div>
+			<div class="form-group col-sm-12">
+			<label class="secondLabel"><input type="radio" name="radio1" class="secondButton">Използвай други</label>
+			</div>
+			
+			
+			<div class="form-group">
+				<div class="form-group col-sm-12" id='oneSheetText' style="visibility: hidden">
+					<div class="form-group">
+					  <label for="sel1">Select thickness</label>
+					  <select class="form-control" id="sells">
+						<option value='0'>Thickness 6.5mm</option>
+						<option value='1'>Thickness 9mm</option>
+						<option value='2'>Thickness 12mm</option>
+						<option value='3'>Thickness 15mm</option>
+						<option value='4'>Thickness 18mm</option>
+						<option value='5'>Thickness 21mm</option>
+						<option value='6'>Thickness 24mm</option>
+						<option value='7'>Thickness 27mm</option>
+						<option value='8'>Thickness 30mm</option>
+					  </select>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="form-group col-sm-12" id='twoSheetsText' style="visibility: hidden">
+					<label for='sheetThickness'class="col-sm-12">Въведете дебелина на платната</label>
+					<div class="col-sm-3">
+						<input id='sheetThickness'type='text'class="form-control">
+					</div>
+					<label for='sheetBendingTention'class="col-sm-12">Въведете напрежения на опън при огъване (fmk)</label>
+					<div class="col-sm-3">
+						<input id='sheetBendingTention'type='text'class="form-control">
+					</div>
+				</div>
+			</div>
+		
+		
+		
+			<p> Оразмеряване на второстепенни греди<p>
+			<div class="form-group col-sm-12">
+			<label class="beamFirstOption"><input type="radio" name="radio2" class="beamFirstOption">Използвайки желано сечение на гредата и клас на дървесината</label>
+			</div>
+			<div class="form-group col-sm-12">
+			<label class="beamSecondOption"><input type="radio" name="radio2" class="beamSecondOption">Използвайки клас на гредата и желано подпорно разстояние</label>
+			</div>
+			<div class="form-group col-sm-12">
+			<label class="beamThirdOption"><input type="radio" name="radio2" class="beamThirdOption">Използвайки стандартна греда H20 (дока)</label>
+			</div>
+			
+			
+			<div class="form-group">
+				<div class="form-group col-sm-12" id='beamClassOption' style="visibility: hidden">
+					<label for='beamClass'class="col-sm-12">Въведете клас на дървесината</label>
+					<div class="col-sm-3">
+						<input id='beamClass'type='text'class="form-control">
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="form-group col-sm-12" id='beamSizeOption' style="visibility: hidden">
+					<label for='beamHeight'class="col-sm-12">Въведете височина на греда</label>
+					<div class="col-sm-3">
+						<input id='beamHeight'type='text'class="form-control">
+					</div>
+					<label for='beamWidth'class="col-sm-12">Въведете ширина на гредата</label>
+					<div class="col-sm-3">
+						<input id='beamWidth'type='text'class="form-control">
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="form-group col-sm-12" id='beamSpanOption' style="visibility: hidden">
+					<label for='beamSpanDistance'class="col-sm-12">Въведете подпорно разстояние</label>
+					<div class="col-sm-3">
+						<input id='beamSpanDistance'type='text'class="form-control">
+					</div>
+				</div>
+			</div>
+		
+		
+		<p> Оразмеряване на главни греди<p>
+			<div class="form-group col-sm-12">
+			<label class="primaryBeamFirstOption"><input type="radio" name="radio3" class="primaryBeamFirstOption">Използвайки желано сечение на гредата и клас на дървесината</label>
+			</div>
+			<div class="form-group col-sm-12">
+			<label class="primaryBeamSecondOption"><input type="radio" name="radio3" class="primaryBeamSecondOption">Използвайки клас на гредата и желано подпорно разстояние</label>
+			</div>
+			<div class="form-group col-sm-12">
+			<label class="primaryBeamThirdOption"><input type="radio" name="radio3" class="primaryBeamThirdOption">Използвайки стандартна греда H20 (дока)</label>
+			</div>
+			
+			
+		<div class="form-group">
+				<div class="form-group col-sm-12" id='primariBeamClassOption' style="visibility: hidden">
+					<label for='primaryBeamClass'class="col-sm-12">Въведете клас на дървесината</label>
+					<div class="col-sm-3">
+						<input id='primaryBeamClass'type='text'class="form-control">
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="form-group col-sm-12" id='primaryBeamSizeOption' style="visibility: hidden">
+					<label for='primaryBeamHeight'class="col-sm-12">Въведете височина на греда</label>
+					<div class="col-sm-3">
+						<input id='primaryBeamHeight'type='text'class="form-control">
+					</div>
+					<label for='primaryBeamWidth'class="col-sm-12">Въведете ширина на гредата</label>
+					<div class="col-sm-3">
+						<input id='primaryBeamWidth'type='text'class="form-control">
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="form-group col-sm-12" id='primaryBeamSpanOption' style="visibility: hidden">
+					<label for='primaryBeamSpanDistance'class="col-sm-12">Въведете подпорно разстояние</label>
+					<div class="col-sm-3">
+						<input id='primaryBeamSpanDistance'type='text'class="form-control">
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">	
+			<input type='button' class='btn btn-primary' value='submit' onclick='myfunc()'>
+		</div>
+		<p style='color:red'id='answer'></p>
+		<p style='color:green'id='answer1'></p>
+		<p style='color:blue'id='answer2'></p>
+		</div>
+	</div>
+	</body>
+	<script>
+	$('.firstLabel').on('click', function(){
+	$("#oneSheetText").attr("style","visibility: show")
+	$("#twoSheetsText").attr("style","visibility: hidden") 
+	});
+	$('.secondLabel').on('click', function(){
+	$("#oneSheetText").attr("style","visibility: hidden")
+	$("#twoSheetsText").attr("style","visibility: show")
+	});
+	$('.beamFirstOption').on('click', function(){
+	$("#beamClassOption").attr("style","visibility: show");
+	$("#beamSizeOption").attr("style","visibility: show");
+	$("#beamSpanOption").attr("style","visibility: hidden") 
+	});
+	$('.beamSecondOption').on('click', function(){
+	$("#beamClassOption").attr("style","visibility: show");
+	$("#beamSizeOption").attr("style","visibility: hidden")
+	$("#beamSpanOption").attr("style","visibility: show") 
+	});
+	$('.beamThirdOption').on('click', function(){
+	$("#beamClassOption").attr("style","visibility: hidden");
+	$("#beamSizeOption").attr("style","visibility: hidden")
+	$("#beamSpanOption").attr("style","visibility: hidden") 
+	});
+	$('.primaryBeamFirstOption').on('click', function(){
+	$("#primariBeamClassOption").attr("style","visibility: show");
+	$("#primaryBeamSizeOption").attr("style","visibility: show");
+	$("#primaryBeamSpanOption").attr("style","visibility: hidden") 
+	});
+	$('.primaryBeamSecondOption').on('click', function(){
+	$("#primariBeamClassOption").attr("style","visibility: show");
+	$("#primaryBeamSizeOption").attr("style","visibility: hidden")
+	$("#primaryBeamSpanOption").attr("style","visibility: show") 
+	});
+	$('.primaryBeamThirdOption').on('click', function(){
+	$("#primariBeamClassOption").attr("style","visibility: hidden");
+	$("#primaryBeamSizeOption").attr("style","visibility: hidden")
+	$("#primaryBeamSpanOption").attr("style","visibility: hidden") 
+	});
+	function myfunc(){
+	
+		<!-- SHEETS :
+		var concreteThickness=document.getElementById('concreteThickness').value;
+		var sheetThickness;
+		var fmk;
+		var EModul;
+		var l;
+		if($('.firstButton').is(':checked')) {
+			var listOfSheets=[{thickness:0.65,fmk:50.8,E:12690},{thickness:0.9,fmk:43.9,E:10983},{thickness:1.2,fmk:40,E:10012},{thickness:1.5,fmk:37.5,E:9386},{thickness:1.8,fmk:35.8,E:8950},{thickness:2.1,fmk:34.5,E:8628},{thickness:2.4,fmk:32.9,E:8381},{thickness:2.7,fmk:31.2,E:8185},{thickness:3,fmk:29.9,E:8026}]
+			var option=document.getElementById('sells').value;
+			console.log(option);
+			for(var i=0;i<listOfSheets.length;i++){
+				if(i==option){
+					sheetThickness=listOfSheets[i].thickness;
+					fmk=listOfSheets[i].fmk;
+					EModul=listOfSheets[i].E;
+				}
+			}
+		}
+		else{
+			sheetThickness=document.getElementById('sheetThickness').value;
+			fmk=document.getElementById('sheetBendingTention').value;
+			EModul= 8000;
+			}
+			console.log(sheetThickness+"-thickness");
+			console.log(fmk+'-fmk')
+			console.log(EModul+'-E')
+			
+			<!-- Loads
+			var concreteLoad=concreteThickness*26*1.35/100;
+			var sheetLoad=sheetThickness*6.5*1.35/100;
+			var peopleAndEquipments=0.75*1.5;
+			var additional=0.75*1.5;
+			var gd=concreteLoad+sheetLoad+peopleAndEquipments+additional; <!-- kN/m==N/mm !!!
+			console.log(gd+'-gd');
+			var gk=concreteLoad/1.35+sheetLoad/1.35+peopleAndEquipments/1.5+additional/1.5;
+			console.log(gk+'-gk');
+			
+			var Wy=1000*sheetThickness*sheetThickness*100/6;
+			console.log(Wy+'-Wy');
+			var Kmod=0.7;
+			var ym=1.2;
+			var Mrd=Wy*fmk*Kmod/ym;
+			console.log(Mrd+'-Mrd');
+			l= Math.sqrt(Mrd/(0.125*gd));
+			console.log(l+'-l');
+			
+			
+			<!-- Sagging
+			var Iy=1000*sheetThickness*sheetThickness*sheetThickness*1000/12;
+			console.log(Iy+'-Iy');
+			var Winst=2.13*gk*l*l*l*l/(384*EModul*Iy);
+			console.log(l/300+'-l/300');
+			console.log(Winst+'-Winst before sagging');
+			while(Winst>l/300){
+				l-=1;
+				Winst=2.13*gk*l*l*l*l/(384*EModul*Iy);
+			}
+			console.log(Winst+'-Winst after sagging');
+			document.getElementById('answer').innerHTML='Максималното подпорно разстояние на платната е:'+l+'mm';
+		
+			console.log('-------------------');
+		
+			<!-- SECONDARY BEAM :
+			Kmod=0.9;
+			ym=1.3;
+			var Kh=1.08;
+			var beamLoad=0.20*0.20*6.5*1.35;
+			var gdBeam=(concreteLoad*l+sheetLoad*l+additional*l+peopleAndEquipments*l)/1000;
+			var gkBeam=(concreteLoad*l/1.35+sheetLoad*l/1.35+additional*l/1.5+peopleAndEquipments*l/1.5)/1000;
+			var lBeam;
+			var beamHeight;
+			var beamWidth;
+			var EModuls=[{clas:14,value:7000,fvk:1.7},{clas:16,value:8000,fvk:1.8},{clas:18,value:9000,fvk:2},{clas:20,value:9500,fvk:2.2},{clas:22,value:10000,fvk:2.4},{clas:24,value:11000,fvk:2.5},{clas:27,value:12000,fvk:2.8},{clas:30,value:12000,fvk:3},{clas:35,value:13000,fvk:3.4},{clas:40,value:14000,fvk:3.8}];
+			var E;
+			var fvk;
+			
+			if($('.beamThirdOption').is(':checked')) {
+				beamLoad=0.56*1.35;
+				gdBeam+=beamLoad; 
+				console.log(gdBeam+'-gd beam');
+				gkBeam=gkBeam+beamLoad/1.35;
+				console.log(gkBeam+'-gk beam');
+				var Med=5; <!-- Med for H20 [kNm]
+				lBeam= Math.sqrt(Med*1000000/(0.125*gdBeam));
+				
+				
+				<!-- Sagging
+				console.log(lBeam+'-L Beam')
+				var EI=640; <!-- kNm^2
+				var Winst=2.13*gkBeam*lBeam*lBeam*lBeam*lBeam/(384*EI*1000000000);
+				console.log(Winst+'-Winst Beam before sagging');
+				console.log(lBeam/500+'-l beam/500');
+				while(Winst>lBeam/500){
+					lBeam-=1;
+					Winst=2.13*gkBeam*lBeam*lBeam*lBeam*lBeam/(384*EI*1000000000);
+				}
+				console.log(Winst+'-Winst Beam after sagging');
+				document.getElementById('answer1').innerHTML='Максималното подпорно разстояние на второстепенните греди е:'+lBeam+'mm';
+			}
+			else{
+				var fmkBeam=document.getElementById('beamClass').value.replace(/\D/g, '');
+				for(var i=0;i<EModuls.length;i++){
+					if(EModuls[i].clas==fmkBeam)	{
+						E=EModuls[i].value;
+						fvk=EModuls[i].fvk;
+					}
+				}
+				console.log(E+'E modul');
+				console.log(fmkBeam+'-beam class');
+				if($('.beamFirstOption').is(':checked')) {
+					beamHeight=document.getElementById('beamHeight').value;
+					console.log(beamHeight+'-beam height');
+					beamWidth=document.getElementById('beamWidth').value;
+					console.log(beamWidth+'-beam width');
+					
+					beamLoad=beamHeight*beamWidth*6.5*1.35/10000;
+					gdBeam+=beamLoad;
+					console.log(gdBeam+'-gd beam');
+					gkBeam=gkBeam+beamLoad/1.35;
+					console.log(gkBeam+'-gk beam');
+					var WyBeam= beamWidth*beamHeight*beamHeight*1000/6;
+					console.log(WyBeam+'-Wy Beam');
+					Kh=Math.min(1.3, Math.pow((150/(beamHeight*10)),0.2))
+					var MrdBeam=WyBeam*fmkBeam*Kmod*Kh/ym;
+					console.log(MrdBeam+'-Mrd Beam');
+					lBeam= Math.sqrt(MrdBeam/(0.125*gdBeam));
+					console.log(lBeam+'-l beam');
+					
+					
+					<!-- Sagging
+					var Iy=beamHeight*beamHeight*beamHeight*beamWidth*10000/12;
+					console.log(Iy+'-Iy beam');
+					var Winst=2.13*gkBeam*lBeam*lBeam*lBeam*lBeam/(384*E*Iy);
+					console.log(Winst+'-Winst Beam before sagging');
+					console.log(lBeam/500+'-l beam/500');
+					while(Winst>lBeam/500){
+						console.log(Winst);
+						lBeam-=10;
+						Winst=2.13*gkBeam*lBeam*lBeam*lBeam*lBeam/(384*E*Iy);
+					}
+					console.log(Winst+'-Winst Beam after sagging');
+					console.log(lBeam+'-l beam');
+					
+					<!-- Sheering
+					var Ved=gdBeam*lBeam/(1000*2);
+					var Sy=beamHeight*10/2*beamWidth*10*1/4*beamHeight*10;
+					var tmax=Ved*Sy*1000/(beamWidth*10*Iy);
+					console.log(tmax+'-tmax before sheering');
+					ym=1.25;
+					var tvg=Kmod*fvk/ym;
+					console.log(tvg+'-tvg');
+					while(tmax>tvg){
+						lBeam-=10;
+						Ved=gdBeam*lBeam/(1000*2);
+						tmax=Ved*Sy*1000/(beamWidth*10*Iy);
+					}
+					console.log(tmax+'-tmax after sheering');
+					document.getElementById('answer1').innerHTML='Максималното подпорно разстояние на второстепенните греди е:'+lBeam+'mm';
+				}
+				else{
+					gdBeam+=beamLoad;
+					console.log(gdBeam+'-gd beam');
+					gkBeam=gkBeam+beamLoad/1.35;
+					console.log(gkBeam+'-gk beam');
+					lBeam=document.getElementById('beamSpanDistance').value;
+					console.log(lBeam+'-beam span');
+				
+				
+					var MedBeam=0.125*gdBeam*lBeam*lBeam/10000; <!-- kNm/m
+					var MrdBeam=fmkBeam*Kmod*Kh/ym;
+					var WyBeam= MedBeam*1000000/MrdBeam;
+					console.log(MedBeam+'Med beam');
+					console.log(MrdBeam+'Mrd beam');
+					console.log(WyBeam+'Wy Beam');
+					beamHeight=80;
+					beamWidth=80;
+					var WyBeamIterac=beamHeight*beamHeight*beamWidth/6;
+					var lamp=true;
+					while(WyBeamIterac<WyBeam){
+						if(lamp){
+							beamWidth+=10;
+							lamp=false;
+						}else{
+							beamHeight+=10;
+							lamp=true;
+						}
+					WyBeamIterac=beamHeight*beamHeight*beamWidth/6;
+					}
+					console.log(beamHeight+"beam height")
+					console.log(beamWidth+"beam width");
+					
+					
+					<!-- Sagging
+					var Iy=beamHeight*beamHeight*beamHeight*beamWidth/12;
+					console.log(Iy+'-Iy');
+					var Winst=2.13*gkBeam*lBeam*lBeam*lBeam*lBeam*10000/(384*E*Iy);
+					console.log(Winst+'-Winst Beam before sagging');
+					console.log(lBeam*10/500+'-l beam/500');
+					while(Winst>lBeam*10/500){
+							if(lamp==true){
+								beamWidth+=10;
+								lamp=false;
+							}
+							else{
+								beamHeight+=10;
+								lamp=true;
+							}
+							Iy=beamHeight*beamHeight*beamHeight*beamWidth/12;
+							Winst=2.13*gkBeam*lBeam*lBeam*lBeam*lBeam*10000/(384*E*Iy);
+							console.log(Winst);
+						}	
+					console.log(Winst+'-Winst Beam after sagging');
+					console.log(beamHeight+"beam height")
+					console.log(beamWidth+"beam width");
+					
+					
+					<!-- Sheering
+					var Ved=gdBeam*lBeam/(100*2);
+					var Sy=beamHeight/2*beamWidth*1/4*beamHeight;
+					var tmax=Ved*Sy*1000/(beamWidth*Iy);
+					console.log(tmax+'-tmax before sheering');
+					ym=1.25;
+					var tvg=Kmod*fvk/ym;
+					console.log(tvg+'-tvg');
+					while(tmax>tvg){
+						if(lamp){
+							beamWidth+=10;
+							lamp=false;
+							}
+						else{
+							beamHeight+=10;
+							lamp=true;
+							}
+							Sy=beamHeight/2*beamWidth*1/4*beamHeight;
+							tmax=Ved*Sy*1000/(beamWidth*Iy);
+					}
+					console.log(tmax+'-tmax after sheering');
+					document.getElementById('answer1').innerHTML='Минималните размери на второстепенната греда са: h='+beamHeight+'b='+beamWidth;
+					lBeam=lBeam*10;
+				}
+			}
+			
+			
+			console.log('--------------------');
+			
+			
+			<!--  PRIMARY BEAM :
+			Kmod=0.9;
+			ym=1.3;
+			Kh=1.08;
+			var gdPrimaryBeam=(+concreteLoad*l*lBeam+sheetLoad*l*lBeam+additional*l*lBeam+peopleAndEquipments*l*lBeam)/1000000+beamLoad*lBeam/1000;
+			var gkPrimaryBeam=(beamLoad*lBeam/1.35+concreteLoad*l*lBeam/1.35+sheetLoad*l*lBeam/1.35+additional*l*lBeam/1.5+peopleAndEquipments*l*lBeam/1.5)/1000000;
+			var lprimaryBeam;
+			var primaryBeamLoad=0.20*0.20*1.35*6.5;
+			var primaryBeamHeight;
+			var primaryBeamWidth;
+			
+			if($('.primaryBeamThirdOption').is(':checked')) {
+				console.log(gdPrimaryBeam+'gd primary beam');
+				console.log(gkPrimaryBeam+'gk primary beam');
+				primaryBeamLoad=0.56*1.35; 
+				console.log(primaryBeamLoad+'-primary beam load');
+				var Med=5; <!-- Med for H20 kNm
+				var MedPrimaryBeam;
+				var i=2;
+				do{
+						var momentAndLength=primaryBeamMoemntCalc(i,l,gdPrimaryBeam,primaryBeamLoad);
+						lprimaryBeam=momentAndLength[0];
+						MedPrimaryBeam=momentAndLength[1];
+					console.log(lprimaryBeam+'-l primaryBeam');
+					console.log(MedPrimaryBeam+'-Med primary beam');
+					i+=0.5;
+				}while(MedPrimaryBeam<Med);
+				i-=0.5;
+				console.log(i);
+				var momentAndLength=primaryBeamMoemntCalc(i,l,gdPrimaryBeam,primaryBeamLoad);
+				lprimaryBeam=momentAndLength[0];
+				MedPrimaryBeam=momentAndLength[1];
+				console.log(MedPrimaryBeam+'-Med primary beam Finaly');
+				console.log(lprimaryBeam+'-l primaryBeam Finaly');
+				while(MedPrimaryBeam>Med){
+					lprimaryBeam-=10;
+					MedPrimaryBeam=primaryBeamAccurateMomentCalc(i,l,gdPrimaryBeam,primaryBeamLoad,lprimaryBeam);
+				}
+				console.log(Med +' Mrd beam');
+				console.log(MedPrimaryBeam+'-Med primary beam Finaly ACCURATE');
+				console.log(lprimaryBeam+'-l primaryBeam Finaly ACCURATE');
+				
+				<!-- Sagging
+				var EI=640; <!-- kNm^2
+				var Winst=5*gkPrimaryBeam*lprimaryBeam*lprimaryBeam*lprimaryBeam*lprimaryBeam/(384*EI*1000000000);
+				console.log(Winst+'-Winst primary Beam before sagging');
+				console.log(lprimaryBeam/500+'-l primary beam/500');
+				while(Winst>lprimaryBeam/500){
+				lprimaryBeam-=1;
+				Winst=5*gkPrimaryBeam*lprimaryBeam*lprimaryBeam*lprimaryBeam*lprimaryBeam/(384*EI*1000000000);
+				}
+				
+				console.log(Winst+'-Winst primary Beam after sagging')
+				document.getElementById('answer2').innerHTML='Максималното подпорно разстояние на главните греди е:'+lprimaryBeam+'mm';
+			}
+			else{
+				var fmkPrimaryBeam=document.getElementById('primaryBeamClass').value.replace(/\D/g, '');
+				for(var i=0;i<EModuls.length;i++){
+					if(EModuls[i].clas==fmkPrimaryBeam){
+						E=EModuls[i].value;
+					}
+				}
+				console.log(fmkPrimaryBeam+'-beam primary class');
+				console.log(E+'E modul primary beam');
+				if($('.primaryBeamFirstOption').is(':checked')) {
+					primaryBeamHeight=document.getElementById('primaryBeamHeight').value;
+					console.log(primaryBeamHeight+'-primary beam height');
+					primaryBeamWidth=document.getElementById('primaryBeamWidth').value
+					console.log(primaryBeamWidth+'-primary beam width');
+					
+					primaryBeamLoad=primaryBeamHeight*primaryBeamWidth*6.5*1.35/10000;
+					console.log(gdPrimaryBeam+'-gd primary beam');
+					console.log(gkPrimaryBeam+'-gk primary beam');
+					console.log(primaryBeamLoad+'-primary beam load');
+					
+					var WyPrimaryBeam= primaryBeamWidth*primaryBeamHeight*primaryBeamHeight*1000/6;
+					console.log(WyPrimaryBeam+'-Wy primary Beam');
+					Kh=Math.min(1.3, Math.pow((150/(primaryBeamHeight*10)),0.2))
+					var MrdBeam=WyPrimaryBeam*fmkPrimaryBeam*Kmod*Kh/ym/1000000;
+					console.log(MrdBeam+'-Mrd primary Beam');
+					
+					var MedPrimaryBeam;
+					var i=2;
+					do{
+						var momentAndLength=primaryBeamMoemntCalc(i,l,gdPrimaryBeam,primaryBeamLoad);
+						lprimaryBeam=momentAndLength[0];
+						MedPrimaryBeam=momentAndLength[1];
+						console.log(lprimaryBeam+'-l primaryBeam');
+						console.log(MedPrimaryBeam+'-Med primary beam');
+						console.log(MrdBeam+'-Mrd primary Beam');
+						i+=0.5;
+					}while(MedPrimaryBeam<MrdBeam);
+					i-=0.5;
+					console.log(i);
+					var momentAndLength=primaryBeamMoemntCalc(i,l,gdPrimaryBeam,primaryBeamLoad);
+					lprimaryBeam=momentAndLength[0];
+					MedPrimaryBeam=momentAndLength[1];
+					console.log(MedPrimaryBeam+'-Med primary beam Finaly');
+					console.log(lprimaryBeam+'-l primaryBeam Finaly');
+					while(MedPrimaryBeam>MrdBeam){
+						lprimaryBeam-=10;
+						MedPrimaryBeam=primaryBeamAccurateMomentCalc(i,l,gdPrimaryBeam,primaryBeamLoad,lprimaryBeam);
+					}
+					console.log(MrdBeam +' Mrd beam');
+					console.log(MedPrimaryBeam+'-Med primary beam Finaly ACCURATE');
+					console.log(lprimaryBeam+'-l primaryBeam Finaly ACCURATE');
+					
+					
+					<!-- Sagging
+					var Iy=primaryBeamHeight*primaryBeamHeight*primaryBeamHeight*primaryBeamWidth*10000/12;
+					console.log(Iy+'-Iy primary beam');
+					var Winst=5*gkPrimaryBeam*lprimaryBeam*lprimaryBeam*lprimaryBeam*lprimaryBeam/(384*E*Iy);
+					console.log(Winst+'-Winst primary Beam before sagging');
+					console.log(lprimaryBeam/500+'-l primary beam/500');
+					while(Winst>lprimaryBeam/500){
+						console.log(Winst);
+						lprimaryBeam-=10;
+						Winst=5*gkPrimaryBeam*lprimaryBeam*lprimaryBeam*lprimaryBeam*lprimaryBeam/(384*E*Iy);
+					}
+					console.log(Winst+'-Winst primary Beam after sagging');
+					document.getElementById('answer2').innerHTML=':Максималното подпорно разстояние на главните греди е:'+lprimaryBeam+'mm';
+					
+				}
+				else{
+				console.log(primaryBeamLoad+'primary beam load');
+				console.log(gdPrimaryBeam+'-gd primary beam');
+				console.log(gkPrimaryBeam+'-gk primary beam');
+				
+				var primaryBeamSpan=document.getElementById('primaryBeamSpanDistance').value;
+				console.log(primaryBeamSpan+'-primary beam span');
+				var MrdBeam=fmkPrimaryBeam*Kmod*Kh/ym;
+				
+				var spans=primaryBeamSpan*10/l;
+				console.log(spans);
+				var x=spans-Math.floor(spans);
+				console.log(spans-Math.floor(spans));
+				if(x<0.5) spans=Math.floor(spans)+0.5;
+				else spans=Math.floor(spans)+1;
+				console.log(spans);
+				var MedBeam=primaryBeamAccurateMomentCalc(spans,l,gdPrimaryBeam,primaryBeamLoad,primaryBeamSpan*10);
+				
+				
+				var WyBeam= MedBeam*1000000/MrdBeam;
+				console.log(MedBeam+'-Med beam');
+				console.log(MrdBeam+'-Mrd beam');
+				console.log(WyBeam+'-Wy Beam');
+				var primaryBeamHeight=80;
+				var primaryBeamWidth=80;
+				var WyBeamIterac=primaryBeamHeight*primaryBeamHeight*primaryBeamWidth/6;
+				var lamp=true;
+				while(WyBeamIterac<WyBeam){
+				if(lamp){
+					primaryBeamHeight+=10;
+					lamp=false;
+				}else{
+					primaryBeamWidth+=10;
+					lamp=true;
+				}
+				WyBeamIterac=primaryBeamHeight*primaryBeamHeight*primaryBeamWidth/6;
+				}
+				
+				console.log(primaryBeamHeight+" primary beam hight");
+				console.log(primaryBeamWidth+" primary beam width");
+
+				
+				<!-- Sagging
+				var Iy=primaryBeamHeight*primaryBeamHeight*primaryBeamHeight*primaryBeamWidth/12;
+				console.log(Iy+'-Iy primary beam');
+				var Winst=5*gkPrimaryBeam*primaryBeamSpan*primaryBeamSpan*primaryBeamSpan*primaryBeamSpan*10000/(384*E*Iy);
+				console.log(Winst+'-Winst');
+				lamp=true;
+				while(Winst>primaryBeamSpan*10/500){
+						console.log(Winst);
+						if(lamp==true){
+						primaryBeamWidth+=10;
+						lamp=false;
+						}
+						else{
+						primaryBeamHeight+=10;
+						lamp=true;
+						}
+						Iy=primaryBeamHeight*primaryBeamHeight*primaryBeamHeight*primaryBeamWidth/12;
+						Winst=5*gkPrimaryBeam*primaryBeamSpan*primaryBeamSpan*primaryBeamSpan*primaryBeamSpan*10000/(384*E*Iy);
+						console.log(Winst);
+				}
+				console.log(primaryBeamHeight+" primary beam hight after sagging");
+				console.log(primaryBeamWidth+" primary beam width after sagging");
+				document.getElementById('answer2').innerHTML='Минималните размери на главните гредаи са: h='+primaryBeamHeight+' ; '+'b='+primaryBeamWidth;
+				}
+			}
+					
+	}
+function primaryBeamMoemntCalc(i,l,gdPrimaryBeam,primaryBeamLoad){
+		var lprimaryBeam;
+		var F=0;
+		var MedPrimaryBeam;
+		lprimaryBeam=i*l;
+		console.log(lprimaryBeam+'l primaryBeam '+i+' spans');
+		l/=1000; <!-- m
+		var times=Math.ceil(i)-1;
+		for(var p=1;p<=times;p++){
+			F+=gdPrimaryBeam*p*l;
+			}
+		F/=l*i;
+		console.log(F+'-F');
+		
+		times=i/2;
+		var n=times-Math.floor(times);
+		if (n<=0.5) times=Math.floor(times);
+		else times=Math.floor(times)+1;
+		var counter=0;
+		for(var p=1;p<=times;p++){
+			counter+=1;
+		}
+		lprimaryBeam/=1000;
+		MedPrimaryBeam=F*(lprimaryBeam-counter*l);
+		
+		
+		var multiplier2=Math.ceil(i/2-1);
+		for(var q=0;q<=multiplier2;q++){
+			MedPrimaryBeam-=gdPrimaryBeam*l*q;
+		}
+		console.log(MedPrimaryBeam+'-Med primary beam without primary beam load	');
+		MedPrimaryBeam=MedPrimaryBeam+lprimaryBeam*lprimaryBeam*0.125*primaryBeamLoad;
+		console.log(MedPrimaryBeam+'-Med primary beam with primary beam load');
+		lprimaryBeam*=1000;
+		
+		return [lprimaryBeam,MedPrimaryBeam];	
+}
+
+function primaryBeamAccurateMomentCalc(i,l,gdPrimaryBeam,primaryBeamLoad,lprimaryBeamAccurate){
+		console.log('---- In accurate moment calculation');
+		console.log('l primary beam-'+(i-0.5)+'-'+i);
+		var F=0;
+		var MedPrimaryBeam;
+		console.log(lprimaryBeamAccurate+'- l primaryBeamAccurate');
+		console.log(l+'-l');
+		l/=1000; <!-- m
+		lprimaryBeamAccurate/=1000;
+		var times=Math.ceil(i)-1;
+		for(var p=1;p<=times;p++){
+			F+=gdPrimaryBeam*p*l;
+			}
+		F/=lprimaryBeamAccurate;
+		console.log(F+'-F');
+		
+		times=i/2;
+		var n=times-Math.floor(times);
+		if (n<=0.5) times=Math.floor(times);
+		else times=Math.floor(times)+1;
+		var counter=0;
+		for(var p=1;p<=times;p++){
+			counter+=1;
+		}
+		MedPrimaryBeam=F*(lprimaryBeamAccurate-counter*l);
+		
+		
+		var multiplier2=Math.ceil(i/2-1);
+		for(var q=0;q<=multiplier2;q++){
+			MedPrimaryBeam-=gdPrimaryBeam*l*q;
+		}
+		console.log(MedPrimaryBeam+'-Med primary beam without primary beam load	');
+		MedPrimaryBeam=MedPrimaryBeam+lprimaryBeamAccurate*lprimaryBeamAccurate*0.125*primaryBeamLoad;
+		console.log(MedPrimaryBeam+'-Med primary beam with primary beam load');
+		
+		return MedPrimaryBeam;	
+}
+	</script>
+</html>	
